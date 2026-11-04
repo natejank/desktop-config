@@ -64,7 +64,6 @@ options = "caps:ctrl_modifier"
 "Mod+Shift+Q" = "session-quit"
 "Mod+Ctrl+Q" = "spawn noctalia msg session lock"
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
-"Print" = { action = "spawn noctalia msg screenshot-region" }
 
 # Media, volume and brightness keys from any input device, routed through the
 # Noctalia shell so its OSDs show. Safe while the session is locked.
@@ -147,6 +146,22 @@ options = "caps:ctrl_modifier"
 "Mod+Space" = "scratchpad-toggle"
 "Mod+Ctrl+Space" = { action = "window-restore-from-scratchpad", repeat = false }
 "Mod+Tab" = "scratchpad-focus-next"
+
+# Application launching
+"Mod+D" = { action = "submap launcher", repeat = false }
+"submap[launcher],W" = { action = "spawn firefox", submap="reset" }
+"submap[launcher],M" = { action = "spawn flatpak run org.mozilla.thunderbird_esr", submap="reset" }
+"submap[launcher],F" = { action = "spawn nautilus", submap="reset" }
+"submap[launcher],Escape" = "submap reset"
+
+# Screenshot
+"Print" = { action = "submap screencap", repeat=false }
+"submap[screencap],W" = { action = "spawn noctalia msg screenshot-window", submap="reset" }
+"submap[screencap],F" = { action = "spawn noctalia msg screenshot-fullscreen pick", submap="reset" }
+"submap[screencap],A" = { action = "spawn noctalia msg screenshot-fullscreen all", submap="reset" }
+"submap[screencap],R" = { action = "spawn noctalia msg screenshot-region", submap="reset" }
+"submap[screencap],D" = { action = "spawn noctalia msg screenshot-annotate", submap="reset" }
+"submap[screencap],Escape" = "submap reset"
 
 # ==============================================================================
 # Layout
