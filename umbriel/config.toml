@@ -41,7 +41,7 @@ corner_radius = 0
 [input.keyboard]
 numlock_toggle = true
 repeat_rate = 25
-repeat_delay = 250
+repeat_delay = 350
 options = "caps:ctrl_modifier"
 
 # Focus can follow the pointer across tiled, floating, and pinned windows.
