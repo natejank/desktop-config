@@ -1,0 +1,39 @@
+[shell]
+telemetry_enabled = true
+clipboard_enabled = false
+
+[storage]
+key_source = "secret-service"
+corner_radius_scale = 0
+
+[theme]
+builtin = "Gruvbox"
+mode = "light"
+
+[bar.default]
+radius = 0
+margin_ends = 0
+
+[location]
+sunset = "20:00"
+sunrise = "07:00"
+
+[nightlight]
+enabled = true
+temperature_day = 6500
+temperature_night = 3000
+
+[system.monitor]
+enabled = false
+
+[weather]
+enabled = false
+
+[idle.behavior.lock]
+timeout = 600
+action = "lock"
+
+[idle.behavior.suspend]
+timeout = 720
+lock_before_suspend = true
+action = "suspend"
