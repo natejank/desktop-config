@@ -1,0 +1,14 @@
+[bar.default]
+radius = 0
+margin_ends = 0
+
+start  = ["launcher", "workspaces"]
+center = ["clock"]
+end    = ["media", "notifications", "network", "bluetooth", "volume", "brightness", "battery", "control-center", "tray"]
+
+[widget.clock]
+format = "{:%d %b  %H:%M}"
+tooltip_format = "{:%A %B %d %Y%n%H:%M:%S %Z}"
+
+[widget.network]
+show_label = false

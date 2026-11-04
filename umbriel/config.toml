@@ -151,6 +151,7 @@ options = "caps:ctrl_modifier"
 "Mod+D" = { action = "submap launcher", repeat = false }
 "submap[launcher],W" = { action = "spawn firefox", submap="reset" }
 "submap[launcher],M" = { action = "spawn flatpak run org.mozilla.thunderbird_esr", submap="reset" }
+"submap[launcher],O" = { action = "spawn flatpak run md.obsidian.Obsidian", submap="reset" }
 "submap[launcher],F" = { action = "spawn nautilus", submap="reset" }
 "submap[launcher],Escape" = "submap reset"
 

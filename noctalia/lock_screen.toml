@@ -1,0 +1,4 @@
+[lockscreen]
+transition = ["fade"]
+transition_duration = 750
+
