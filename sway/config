@@ -180,10 +180,10 @@ input type:keyboard {
 # Application Launching
 #
 mode "launcher" {
-    bindsym w exec firefox
-    bindsym m exec flatpak run org.mozilla.thunderbird_esr
-    bindsym o exec flatpak run md.obsidian.Obsidian
-    bindsym f exec nautilus
+    bindsym w exec firefox, mode "default"
+    bindsym m exec flatpak run org.mozilla.thunderbird_esr, mode "default"
+    bindsym o exec flatpak run md.obsidian.Obsidian, mode "default"
+    bindsym f exec nautilus, mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
