@@ -1,0 +1,218 @@
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term foot
+set $ipc noctalia msg
+
+# integrate with noctalia
+exec noctalia
+
+# configuration
+# disable titlebar
+default_border pixel 2
+# configure gaps
+gaps inner 5
+gaps outer 5
+
+### Output configuration
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+output eDP-1 {
+    resolution 1920x1080
+    # position 1920,0
+    scale 1.75
+}
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
+output DP-2 {
+    resolution 3840x2160
+    scale 1.75
+}
+
+
+### Input configuration
+# You can also configure each device individually.
+# Read `man 5 sway-input` for more information about this section.
+input type:touchpad {
+  dwt enabled
+  tap enabled
+  natural_scroll enabled
+  middle_emulation enabled
+}
+
+input type:keyboard {
+    xkb_options caps:ctrl_modifier
+}
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Start your launcher
+    bindsym $mod+d exec $ipc panel-toggle launcher
+
+    # Kill focused window
+    bindsym $mod+q kill
+
+    # Exit sway
+    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    # lock screen
+    bindsym $mod+Ctrl+q = exec $ipc session lock
+
+    # Drag windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+#
+# Utilities:
+#
+    bindsym --locked XF86AudioRaiseVolume exec $ipc volume-up
+    bindsym --locked XF86AudioLowerVolume exec $ipc volume-down
+    bindsym --locked XF86AudioMute exec $ipc volume-mute
+    bindsym --locked XF86MonBrightnessUp exec $ipc brightness-up
+    bindsym --locked XF86MonBrightnessDown exec $ipc brightness-down
+    bindsym --locked XF86AudioMicMute exec $ipc mic-mute
+    bindsym --locked XF86AudioPlay exec $ipc media play-pause
+    bindsym --locked XF86AudioPause exec $ipc media play-pause
+    bindsym --locked XF86AudioPrev exec $ipc media previous
+    bindsym --locked XF86AudioNext exec $ipc media next
+    bindsym --locked XF86AudioStop exec $ipc media stop
+
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Window state and layout:
+#
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+t floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+shift+t focus mode_toggle
+
+    # Pin window
+    bindsym $mod+p sticky toggle
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    bindsym $mod+e layout toggle split
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+
+#
+# Scratchpad:
+#
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+space move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+space scratchpad show
+
+#
+# Application Launching
+#
+mode "launcher" {
+    bindsym w exec firefox
+    bindsym m exec flatpak run org.mozilla.thunderbird_esr
+    bindsym o exec flatpak run md.obsidian.Obsidian
+    bindsym f exec nautilus
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "launcher"
+
+#
+# Screenshot
+#
+mode "screencap" {
+    bindsym W exec $ipc screenshot-window
+    bindsym F exec $ipc screenshot-fullscreen pick
+    bindsym A exec $ipc screenshot-fullscreen all
+    bindsym R exec $ipc screenshot-region
+    bindsym D exec $ipc screenshot-annotate
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+#
+# Window rules
+#
+
+for_window {
+    [app_id = "^dev.noctalia.Noctalia$"] floating enable, resize set width 1020 height 900
+    [app_id = "^dev.noctalia.UmbrielSharePicker$"]  floating enable, resize set width 1020 height 900
+    [title = "^(Picture-in-Picture|Picture in picture)$"]  floating enable, resize set width 20 height 20
+    [title="^Extension: [(]Bitwarden Password Manager[)].*$"] floating enable, resize set width 400 height 600
+}
+
+bindsym Print mode "screencap"
+
+include /etc/sway/config.d/*
