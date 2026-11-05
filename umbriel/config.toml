@@ -242,6 +242,11 @@ confine_pointer = true
 match.app_id = "^obs$"
 background_render = true
 
+[[window_rule]]
+match.title = "^Extension: [(]Bitwarden Password Manager[)].*$"
+default_floating = true
+default_floating_size_px = { width = 400, height = 600 }
+
 # Keep matching windows visible locally but absent from screenshots and recordings.
 # See docs/user/window-rules.md#capture-protection.
 # [[window_rule]]

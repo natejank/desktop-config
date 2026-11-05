@@ -4,7 +4,7 @@ margin_ends = 0
 
 start  = ["launcher", "workspaces"]
 center = ["clock"]
-end    = ["media", "notifications", "network", "bluetooth", "volume", "brightness", "battery", "control-center", "tray"]
+end    = ["media", "notifications", "network", "bluetooth", "volume", "brightness", "battery", "tray", "control-center"]
 
 [widget.clock]
 format = "{:%d %b  %H:%M}"
