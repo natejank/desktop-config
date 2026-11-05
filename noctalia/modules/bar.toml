@@ -12,3 +12,4 @@ tooltip_format = "{:%A %B %d %Y%n%H:%M:%S %Z}"
 
 [widget.network]
 show_label = false
+

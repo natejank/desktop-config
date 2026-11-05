@@ -1,0 +1,9 @@
+[bar.default]
+start  = ["launcher", "workspaces", "spacer", "quick-action"]
+
+[widget.quick-action]
+type = "custom_button"
+glyph = "keyboard"
+
+[widget.quick-action.actions]
+left = "exec kill -n 34 $(pgrep wvkbd-deskintl)"

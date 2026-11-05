@@ -1,3 +1,10 @@
+[include]
+autoload = false
+files = [
+  "modules/",
+  "enabled/",
+]
+
 [theme]
 builtin = "Gruvbox"
 mode = "light"
