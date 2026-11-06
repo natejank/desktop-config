@@ -134,6 +134,8 @@ hover_raises = false # Hover focuses only; clicks and keybinds raise.
 "Mod+Shift+7" = "window-move-to-workspace 7"
 "Mod+Shift+8" = "window-move-to-workspace 8"
 "Mod+Shift+9" = "window-move-to-workspace 9"
+"Mod+W" = "output-focus-next"
+"Mod+Shift+W" = "output-focus-next"
 
 # Scratchpad
 "Mod+Shift+Space" = { action = "window-move-to-scratchpad", repeat = false }
