@@ -63,6 +63,7 @@ hover_raises = false # Hover focuses only; clicks and keybinds raise.
 "Mod+Q" = { action = "window-close", repeat = false }
 "Mod+Shift+Q" = "session-quit"
 "Mod+Ctrl+Q" = "spawn noctalia msg session lock"
+"Ctrl+Alt+Delete" = "spawn noctalia msg panel-toggle session"
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
 
 # Media, volume and brightness keys from any input device, routed through the
@@ -76,6 +77,7 @@ hover_raises = false # Hover focuses only; clicks and keybinds raise.
 "XF86AudioPrev" = { action = "spawn noctalia msg media previous", allow_when_locked = true }
 "XF86MonBrightnessUp" = { action = "spawn noctalia msg brightness-up", allow_when_locked = true }
 "XF86MonBrightnessDown" = { action = "spawn noctalia msg brightness-down", allow_when_locked = true }
+"XF86PowerOff" = "spawn noctalia msg panel-toggle session"
 
 # Focus and movement
 "Mod+Left" = "window-focus-or-output-left"

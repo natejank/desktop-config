@@ -70,6 +70,7 @@ input type:keyboard {
 
     # lock screen
     bindsym $mod+Ctrl+q = exec $ipc session lock
+    bindsym Ctrl+Mod1+Delete = exec $ipc panel-toggle session
 
     # Drag windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -92,6 +93,7 @@ input type:keyboard {
     bindsym --locked XF86AudioPrev exec $ipc media previous
     bindsym --locked XF86AudioNext exec $ipc media next
     bindsym --locked XF86AudioStop exec $ipc media stop
+    bindsym XF86PowerOff = exec $ipc panel-toggle session
 
 #
 # Moving around:
