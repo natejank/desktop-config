@@ -148,7 +148,7 @@ hover_raises = false # Hover focuses only; clicks and keybinds raise.
 "submap[launcher],W" = { action = "spawn firefox", submap="reset" }
 "submap[launcher],M" = { action = "spawn flatpak run org.mozilla.thunderbird_esr", submap="reset" }
 "submap[launcher],O" = { action = "spawn flatpak run md.obsidian.Obsidian", submap="reset" }
-"submap[launcher],F" = { action = "spawn nautilus", submap="reset" }
+"submap[launcher],F" = { action = "spawn nautilus -w", submap="reset" }
 "submap[launcher],Escape" = "submap reset"
 
 # Screenshot
