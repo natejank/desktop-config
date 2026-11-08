@@ -169,6 +169,8 @@ input type:keyboard {
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
+    bindsym $mod+w focus output right
+    bindsym $mod+Shift+w focus output left
 
 #
 # Scratchpad:
@@ -187,7 +189,7 @@ mode "launcher" {
     bindsym w exec firefox, mode "default"
     bindsym m exec flatpak run org.mozilla.thunderbird_esr, mode "default"
     bindsym o exec flatpak run md.obsidian.Obsidian, mode "default"
-    bindsym f exec nautilus, mode "default"
+    bindsym f exec nautilus -w, mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }

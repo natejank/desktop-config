@@ -42,7 +42,7 @@ corner_radius = 0
 [input.keyboard]
 numlock_toggle = true
 repeat_rate = 25
-repeat_delay = 350
+repeat_delay = 500
 options = "caps:ctrl_modifier"
 
 # Focus can follow the pointer across tiled, floating, and pinned windows.
@@ -134,6 +134,8 @@ hover_raises = false # Hover focuses only; clicks and keybinds raise.
 "Mod+Shift+7" = "window-move-to-workspace 7"
 "Mod+Shift+8" = "window-move-to-workspace 8"
 "Mod+Shift+9" = "window-move-to-workspace 9"
+"Mod+W" = "output-focus-next"
+"Mod+Shift+W" = "output-focus-next"
 
 # Scratchpad
 "Mod+Shift+Space" = { action = "window-move-to-scratchpad", repeat = false }
@@ -146,7 +148,7 @@ hover_raises = false # Hover focuses only; clicks and keybinds raise.
 "submap[launcher],W" = { action = "spawn firefox", submap="reset" }
 "submap[launcher],M" = { action = "spawn flatpak run org.mozilla.thunderbird_esr", submap="reset" }
 "submap[launcher],O" = { action = "spawn flatpak run md.obsidian.Obsidian", submap="reset" }
-"submap[launcher],F" = { action = "spawn nautilus", submap="reset" }
+"submap[launcher],F" = { action = "spawn nautilus -w", submap="reset" }
 "submap[launcher],Escape" = "submap reset"
 
 # Screenshot
