@@ -2,7 +2,7 @@
 radius = 0
 margin_ends = 0
 
-start  = ["launcher", "workspaces"]
+start  = ["launcher", "workspaces", "spacer", "quick-action"]
 center = ["clock"]
 end    = ["media", "notifications", "network", "bluetooth", "volume", "brightness", "battery", "tray", "control-center"]
 
@@ -13,3 +13,9 @@ tooltip_format = "{:%A %B %d %Y%n%H:%M:%S %Z}"
 [widget.network]
 show_label = false
 
+[widget.quick-action]
+type = "custom_button"
+glyph = "keyboard"
+
+[widget.quick-action.actions]
+left = "exec kill -n 34 $(pgrep wvkbd-deskintl)"
