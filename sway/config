@@ -93,6 +93,7 @@ input type:keyboard {
     bindsym --locked XF86AudioPrev exec $ipc media previous
     bindsym --locked XF86AudioNext exec $ipc media next
     bindsym --locked XF86AudioStop exec $ipc media stop
+    bindsym --locked $mod+Shift+F8 output * enable
     bindsym XF86PowerOff exec $ipc panel-toggle session
 
 #
