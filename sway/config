@@ -17,6 +17,8 @@ exec noctalia
 exec sh -c '~/dist/wvkbd/wvkbd-deskintl -l full,special --hidden'
 # start screen rotation daemon
 exec sh -c '~/dist/rot8/target/release/rot8 --sleep 1000'
+# polkit agent
+exec /usr/libexec/xfce-polkit
 
 # configuration
 # disable titlebar
